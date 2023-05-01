@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# This script is displaying "Holberton School" 10 times
-for (( i=0; i<10; i++ ))
-do
-    echo "Best School"
-done
+#shellscript to print Best School ten times
+
+for ((var=0; var <= 9; var++));do
+	echo 'Best School'
+	done
