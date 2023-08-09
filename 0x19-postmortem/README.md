@@ -14,8 +14,8 @@ This is the reason why **Qingspoet** came into existence, to support and allevia
 
 # THE PROJECT START AND ENDS
 
-The project commencement began on the 12-December-2022, after some brief project meeting despite it being a self test project and it ended finally on the 3rd-Jan-2023.
-Starting the project required a lot of planning and organizing despote being a self development project.
+The project commencement began on the 2-July-2023, after some brief project meeting despite it being a self test project and it will finally end on  3rd-August-2023.
+Starting the project required a lot of planning and organizing despite being a self development project.
 
 # CHALLENGES
 
