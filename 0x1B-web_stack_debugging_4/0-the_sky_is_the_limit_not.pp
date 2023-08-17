@@ -1,12 +1,10 @@
-# Fix and allow unlimited traffic/requests
+# Fix the number of max open files per process
 
-exec {'replace':
-  provider => shell,
-  command  => 'sudo sed -i "s/ULIMIT=\"-n 15\"/ULIMIT=\"-n 4096\"/" /etc/default/nginx',
-  before   => Exec['restart'],
+exec { 'fix--for-nginx':
+  command => "/bin/sed -i /etc/default/nginx -e 's/15/3000/'"
 }
 
-exec {'restart':
-  provider => shell,
-  command  => 'sudo service nginx restart',
+exec { 'restart nginx':
+  command => '/usr/sbin/service nginx restart',
+  require => Exec['fix--for-nginx']
 }

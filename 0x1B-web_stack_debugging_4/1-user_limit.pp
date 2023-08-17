@@ -1,12 +1,10 @@
-# Fix and allow user holberton with unlimited limits
+# Fix the number of max open files per process
 
-exec {'replace-1':
-  provider => shell,
-  command  => 'sudo sed -i "s/nofile 5/nofile 50000/" /etc/security/limits.conf',
-  before   => Exec['replace-2'],
+exec { 'fix--for-nginx':
+  command => "/bin/sed -i /etc/default/nginx -e 's/15/3000/'"
 }
 
-exec {'replace-2':
-  provider => shell,
-  command  => 'sudo sed -i "s/nofile 4/nofile 40000/" /etc/security/limits.conf',
+exec { 'restart nginx':
+  command => '/usr/sbin/service nginx restart',
+  require => Exec['fix--for-nginx']
 }
